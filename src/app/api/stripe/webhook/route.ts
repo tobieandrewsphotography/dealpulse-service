@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { stripe } from "@/lib/stripe";
+import { getStripe } from "@/lib/stripe";
 import { supabaseAdmin } from "@/lib/supabase";
 import type Stripe from "stripe";
 
@@ -15,7 +15,7 @@ export async function POST(req: NextRequest) {
   const rawBody = await req.text();
   let event: Stripe.Event;
   try {
-    event = stripe.webhooks.constructEvent(rawBody, sig, secret);
+    event = getStripe().webhooks.constructEvent(rawBody, sig, secret);
   } catch (err: any) {
     console.error("Stripe webhook verification failed:", err.message);
     return NextResponse.json({ error: "Invalid signature" }, { status: 400 });

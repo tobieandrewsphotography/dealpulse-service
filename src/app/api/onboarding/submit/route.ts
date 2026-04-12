@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 import { onboardingSchema } from "@/lib/onboarding-schema";
 import { supabaseAdmin } from "@/lib/supabase";
-import { stripe } from "@/lib/stripe";
+import { getStripe } from "@/lib/stripe";
 
 export const runtime = "nodejs";
 
@@ -69,7 +69,7 @@ export async function POST(req: NextRequest) {
       : process.env.STRIPE_PRICE_STANDARD;
     const origin = req.headers.get("origin") || process.env.NEXT_PUBLIC_AGENT_URL;
 
-    const session = await stripe.checkout.sessions.create({
+    const session = await getStripe().checkout.sessions.create({
       mode: "subscription",
       customer_email: data.email,
       line_items: [{ price: priceId, quantity: 1 }],

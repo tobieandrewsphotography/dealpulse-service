@@ -10,9 +10,9 @@ export default function HomePage() {
       <section className="bg-gradient-to-br from-brand-dark to-slate-800 text-white">
         <div className="mx-auto max-w-6xl px-6 py-24 text-center">
           <h1 className="text-5xl font-bold tracking-tight md:text-6xl">
-            Your market. Your brand.
+            Your real estate market. Your brand.
             <br />
-            <span className="text-brand-primary">Daily deals — automated.</span>
+            <span className="text-brand-primary">Daily deals. Automated.</span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-slate-300">
             White-labeled Deal of the Day real estate apps that post fresh undervalued
@@ -34,6 +34,66 @@ export default function HomePage() {
               See a live example →
             </a>
           </div>
+        </div>
+      </section>
+
+      {/* Examples gallery */}
+      <section className="mx-auto max-w-6xl px-6 py-20">
+        <h2 className="text-center text-3xl font-bold">See it in action</h2>
+        <p className="mx-auto mt-3 max-w-2xl text-center text-slate-600">
+          A real DealPulse deployment for the Rehmert Andrews team — daily deal pages,
+          mobile-first design, and auto-posted social content.
+        </p>
+
+        <div className="mt-12 space-y-6">
+          <figure className="overflow-hidden rounded-lg border border-slate-200 shadow-sm">
+            <img
+              src="/images/Homepage-desktop.png"
+              alt="Daily deal homepage — top"
+              className="w-full"
+            />
+            <figcaption className="bg-slate-50 px-4 py-3 text-sm text-slate-600">
+              Daily deal homepage — above the fold
+            </figcaption>
+          </figure>
+          <figure className="overflow-hidden rounded-lg border border-slate-200 shadow-sm">
+            <img
+              src="/images/Homepage-desktop1.png"
+              alt="Daily deal homepage — continued"
+              className="w-full"
+            />
+            <figcaption className="bg-slate-50 px-4 py-3 text-sm text-slate-600">
+              Daily deal homepage — continued
+            </figcaption>
+          </figure>
+          <figure className="mx-auto max-w-md overflow-hidden rounded-lg border border-slate-200 shadow-sm">
+            <img
+              src="/images/deal-page-mobile.jpeg"
+              alt="Individual deal page on mobile"
+              className="w-full"
+            />
+            <figcaption className="bg-slate-50 px-4 py-3 text-sm text-slate-600">
+              Individual deal page — mobile
+            </figcaption>
+          </figure>
+        </div>
+
+        <h3 className="mt-16 text-center text-xl font-semibold">
+          Auto-posted to social every day
+        </h3>
+        <div className="mt-6 grid gap-6 md:grid-cols-3">
+          {[1, 2, 3].map((n) => (
+            <figure
+              key={n}
+              className="overflow-hidden rounded-lg border border-slate-200 shadow-sm"
+            >
+              <img
+                src={`/images/social-post${n}.jpeg`}
+                alt={`Auto-posted social deal ${n}`}
+                className="w-full object-cover"
+              />
+            </figure>
+          ))}
         </div>
       </section>
 

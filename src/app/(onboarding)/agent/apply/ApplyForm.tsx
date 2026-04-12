@@ -162,7 +162,7 @@ export default function ApplyForm() {
             <div>
               <div className="font-semibold">I have a lender sponsor</div>
               <div className="text-sm text-slate-600">
-                Co-branded plan at $1,250/mo instead of $1,500/mo. You'll coordinate billing split with your lender.
+                Co-branded plan at $1,250/mo instead of $1,500/mo. You&apos;ll coordinate billing split with your lender.
               </div>
             </div>
           </label>
@@ -173,7 +173,7 @@ export default function ApplyForm() {
               <span className="text-base font-normal text-slate-500">/month</span>
             </div>
             <p className="mt-3 text-sm text-slate-600">
-              You'll be redirected to Stripe to complete payment. Your site goes live within 24-48 hours.
+              You&apos;ll be redirected to Stripe to complete payment. Your site goes live within 24-48 hours.
             </p>
           </div>
           {error && <p className="text-sm text-red-600">{error}</p>}

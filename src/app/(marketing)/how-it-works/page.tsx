@@ -5,8 +5,8 @@ export default function HowItWorksPage() {
       d: "Fill out a 4-step onboarding form at DealPulseAgent.com: your info, your brand, your market, and payment. Takes about 10 minutes.",
     },
     {
-      t: "2. We provision your site",
-      d: "Our team configures your custom subdomain, applies your brand colors and logo, and connects your MLS Grid feed to your target zip codes.",
+      t: "2. We provision your site — web app branded to you",
+      d: "Our team configures your custom subdomain, applies your brand colors and logo, and connects your MLS Grid feed to your target zip codes. Every day we publish a brand-new web page for that day's deal — driving fresh SEO value — and every social post links back to that subdomain page.",
     },
     {
       t: "3. Daily deal engine runs",
@@ -18,7 +18,7 @@ export default function HowItWorksPage() {
     },
     {
       t: "5. Leads flow to you",
-      d: "Every inquiry goes directly to you via email and SMS. DealPulse never touches your leads or your commission.",
+      d: "Every inquiry goes directly to you via email and SMS, and is automatically loaded into your connected CRM. DealPulse never touches your leads or your commission.",
     },
   ];
   return (
