@@ -82,9 +82,8 @@ export async function POST(req: NextRequest) {
     }
 
     // 3. Create Stripe Checkout session
-    const priceId = data.lenderSponsor
-      ? process.env.STRIPE_PRICE_LENDER
-      : process.env.STRIPE_PRICE_STANDARD;
+    // Agent always pays $1,000/mo — partner co-branding is billed separately
+    const priceId = process.env.STRIPE_PRICE_STANDARD;
     const origin = req.headers.get("origin") || process.env.NEXT_PUBLIC_AGENT_URL;
 
     const session = await getStripe().checkout.sessions.create({

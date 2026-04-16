@@ -162,7 +162,7 @@ export default function ApplyForm() {
             <div>
               <div className="font-semibold">I have a co-marketing partner (lender, inspector, title, etc.)</div>
               <div className="text-sm text-slate-600">
-                Reduced plan at $750/mo instead of $1,000/mo. Your partner pays $250/mo for co-branding placement on your deal pages, emails, and social posts.
+                Add a partner&apos;s brand to your deal pages, emails, and social posts. Your partner will be set up on a separate $250/mo co-branding plan — your price stays the same.
               </div>
             </div>
           </label>
@@ -237,12 +237,12 @@ export default function ApplyForm() {
           <div className="rounded-lg bg-slate-50 p-6">
             <div className="text-sm text-slate-600">Your plan</div>
             <div className="mt-1 text-3xl font-bold">
-              ${lender ? "750" : "1,000"}
+              $1,000
               <span className="text-base font-normal text-slate-500">/month</span>
             </div>
             {lender && (
               <p className="mt-1 text-sm text-sky-700 font-medium">
-                Your partner pays $250/mo — you pay $750/mo.
+                Your co-marketing partner will be invoiced separately at $250/mo for their co-branding placement.
               </p>
             )}
             <p className="mt-3 text-sm text-slate-600">
