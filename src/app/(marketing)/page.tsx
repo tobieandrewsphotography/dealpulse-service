@@ -1,6 +1,6 @@
 import Link from "next/link";
+import TellMeMoreModal from "@/components/TellMeMoreModal";
 
-const AGENT_URL = process.env.NEXT_PUBLIC_AGENT_URL || "https://dealpulseagent.com";
 const DEMO_URL = process.env.NEXT_PUBLIC_DEMO_URL || "https://deals.rehmertandrews.com";
 
 export default function HomePage() {
@@ -21,18 +21,19 @@ export default function HomePage() {
             One web app that does it all — under your name, in your market, every single morning.
             Everything is branded to you. Your logo. Your colors. Your marketing.
           </p>
-          <div className="mt-10 flex justify-center gap-4">
-            <a
-              href={AGENT_URL}
-              className="rounded-md bg-brand-primary px-6 py-3 font-semibold text-white hover:bg-sky-600"
+          <div className="mt-10 flex flex-wrap justify-center gap-4">
+            <TellMeMoreModal />
+            <Link
+              href="/agent/apply"
+              className="rounded-md border border-slate-500 px-6 py-3 font-semibold hover:bg-slate-700 transition-colors"
             >
-              Launch your site
-            </a>
+              Launch your site →
+            </Link>
             <a
               href={DEMO_URL}
               target="_blank"
               rel="noreferrer"
-              className="rounded-md border border-slate-500 px-6 py-3 font-semibold hover:bg-slate-700"
+              className="rounded-md border border-slate-500 px-6 py-3 font-semibold hover:bg-slate-700 transition-colors"
             >
               See a live example →
             </a>
@@ -218,12 +219,12 @@ export default function HomePage() {
               <li>✓ Branded image overlays on every post</li>
               <li>✓ Ongoing support &amp; updates</li>
             </ul>
-            <a
-              href={AGENT_URL}
+            <Link
+              href="/agent/apply"
               className="mt-8 block rounded-md bg-brand-primary px-6 py-3.5 text-center text-lg font-semibold text-white hover:bg-sky-600"
             >
               Get started
-            </a>
+            </Link>
           </div>
 
           {/* Co-marketing partners callout */}
@@ -392,12 +393,15 @@ export default function HomePage() {
       <section className="bg-brand-dark py-16 text-center text-white">
         <h2 className="text-3xl font-bold">Ready to launch?</h2>
         <p className="mt-4 text-slate-300">Set up your Deal of the Day site in minutes.</p>
-        <a
-          href={AGENT_URL}
-          className="mt-8 inline-block rounded-md bg-brand-primary px-8 py-3 font-semibold hover:bg-sky-600"
-        >
-          Start onboarding →
-        </a>
+        <div className="mt-8 flex flex-wrap justify-center gap-4">
+          <TellMeMoreModal />
+          <Link
+            href="/agent/apply"
+            className="inline-block rounded-md border border-slate-500 px-8 py-3 font-semibold hover:bg-slate-700 transition-colors"
+          >
+            Start onboarding →
+          </Link>
+        </div>
       </section>
     </>
   );
