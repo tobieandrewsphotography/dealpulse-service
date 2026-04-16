@@ -236,14 +236,20 @@ export default function HomePage() {
               who get co-branding placement on your deal pages, emails, and social posts.
               They help cover the subscription cost, and you keep the full platform.
             </p>
-            <div className="mt-6 flex flex-wrap justify-center gap-3">
-              {["Lender", "Insurance", "Title Company", "Inspector"].map((partner) => (
-                <span
-                  key={partner}
-                  className="rounded-full border border-amber-300 bg-white px-4 py-1.5 text-sm font-medium text-amber-800"
+            <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
+              {[
+                { label: "Lender", cta: "Get pre-approved →" },
+                { label: "Insurance", cta: "Get a quote →" },
+                { label: "Title Company", cta: "Estimate closing costs →" },
+                { label: "Inspector", cta: "Schedule inspection →" },
+              ].map((partner) => (
+                <div
+                  key={partner.label}
+                  className="rounded-lg border border-amber-300 bg-white px-3 py-3 text-center"
                 >
-                  {partner}
-                </span>
+                  <p className="text-sm font-semibold text-amber-900">{partner.label}</p>
+                  <p className="mt-1 text-xs text-amber-700">{partner.cta}</p>
+                </div>
               ))}
             </div>
           </div>

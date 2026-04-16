@@ -46,21 +46,47 @@ export default function PricingPage() {
 
         <div className="mt-8 grid gap-4 sm:grid-cols-2">
           {[
-            { icon: "🏦", title: "Lender", desc: "Their logo on every deal page and email" },
-            { icon: "🛡️", title: "Insurance Agent", desc: "Featured on homeowner resources" },
-            { icon: "📋", title: "Title Company", desc: "Branded on closing-related content" },
-            { icon: "🔍", title: "Home Inspector", desc: "Highlighted in property details" },
+            {
+              icon: "🏦",
+              title: "Lender",
+              desc: "Their logo on every deal page and email.",
+              cta: "Get pre-approved →",
+              detail: "A clickable link on every deal page takes buyers directly to your lender's pre-approval form.",
+            },
+            {
+              icon: "🛡️",
+              title: "Insurance Agent",
+              desc: "Featured on homeowner resources.",
+              cta: "Get a direct insurance quote →",
+              detail: "Buyers clicking to get a quote go straight to your insurance partner's site.",
+            },
+            {
+              icon: "📋",
+              title: "Title Company",
+              desc: "Branded on closing-related content.",
+              cta: "Find out closing & title costs →",
+              detail: "Every deal page links buyers to your title partner to estimate their closing costs.",
+            },
+            {
+              icon: "🔍",
+              title: "Home Inspector",
+              desc: "Highlighted in property details.",
+              cta: "Schedule an inspection →",
+              detail: "Interested buyers can book an inspection directly from the deal page — one click.",
+            },
           ].map((p) => (
             <div key={p.title} className="rounded-lg border border-amber-200 bg-amber-50 p-5">
               <div className="text-2xl">{p.icon}</div>
               <h3 className="mt-2 font-semibold text-amber-900">{p.title}</h3>
               <p className="mt-1 text-sm text-amber-800">{p.desc}</p>
+              <p className="mt-2 text-sm font-semibold text-amber-700">{p.cta}</p>
+              <p className="mt-1 text-xs text-amber-700/80">{p.detail}</p>
             </div>
           ))}
         </div>
 
         <p className="mt-8 text-center text-sm text-slate-500">
-          Partner arrangements are between you and your sponsors. Your subscription fee to DealPulse stays the same regardless — partners are additional revenue for you.
+          Each partner&apos;s logo is a live link to their website — driving real referral traffic directly to them. Partner arrangements are between you and your sponsors. Your DealPulse subscription stays the same regardless.
         </p>
       </div>
     </div>
