@@ -33,7 +33,20 @@ export default function HomePage() {
                 and I&apos;m opening it up to{" "}
                 <span className="font-bold text-white">one agent per MLS market.</span>
               </p>
-              <div className="mt-8 flex flex-wrap gap-4">
+              {/* Founder byline */}
+              <div className="mt-8 flex items-center gap-4">
+                <img
+                  src="/Tobie-headshot.jpg"
+                  alt="Tobie Andrews, Realtor"
+                  className="h-14 w-14 rounded-full object-cover ring-2 ring-brand-primary ring-offset-2 ring-offset-slate-900"
+                />
+                <div>
+                  <p className="font-semibold text-white">Tobie Andrews, Realtor®</p>
+                  <p className="text-sm text-slate-400">Rehmert Andrews &amp; Associates · Wichita, KS</p>
+                </div>
+              </div>
+
+              <div className="mt-6 flex flex-wrap gap-4">
                 <TellMeMoreModal />
                 <a
                   href={DEMO_URL}
