@@ -8,35 +8,78 @@ export default function HomePage() {
     <>
       {/* Hero */}
       <section className="bg-gradient-to-br from-brand-dark to-slate-800 text-white">
-        <div className="mx-auto max-w-6xl px-6 py-24 text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-brand-primary">
-            What does every agent want more of?
-          </p>
-          <h1 className="mt-4 text-5xl font-bold tracking-tight md:text-6xl">
-            Leads. Hot leads.
-            <br />
-            <span className="text-brand-primary">Social media. SEO.</span>
-          </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-xl text-slate-300">
-            One web app that does it all — under your name, in your market, every single morning.
-            Everything is branded to you. Your logo. Your colors. Your marketing.
-          </p>
-          <div className="mt-10 flex flex-wrap justify-center gap-4">
-            <TellMeMoreModal />
-            <Link
-              href="/agent/apply"
-              className="rounded-md border border-slate-500 px-6 py-3 font-semibold hover:bg-slate-700 transition-colors"
-            >
-              Launch your site →
-            </Link>
-            <a
-              href={DEMO_URL}
-              target="_blank"
-              rel="noreferrer"
-              className="rounded-md border border-slate-500 px-6 py-3 font-semibold hover:bg-slate-700 transition-colors"
-            >
-              See a live example →
-            </a>
+        <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
+          <div className="grid gap-12 md:grid-cols-2 md:items-center">
+
+            {/* Left — the story */}
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-widest text-brand-primary">
+                Built by a real estate agent &middot; For real estate agents
+              </p>
+              <h1 className="mt-4 text-4xl font-bold tracking-tight md:text-5xl leading-tight">
+                I couldn&apos;t find a tool<br />
+                that did it all.<br />
+                <span className="text-brand-primary">So I built one.</span>
+              </h1>
+              <p className="mt-6 text-lg text-slate-300 leading-relaxed">
+                I&apos;m Tobie Andrews — a Realtor in Wichita, Kansas. I was posting to social media
+                at midnight, watching my website sit buried on Google, and scrambling to find leads
+                worth calling. I wanted one tool that scored the best MLS deals every morning,
+                posted them automatically, emailed my subscribers, and sent me hot leads the second
+                someone was ready to act.
+              </p>
+              <p className="mt-4 text-lg text-slate-300 leading-relaxed">
+                Nothing like it existed. So I built it. I run it on my own site every day —
+                and I&apos;m opening it up to{" "}
+                <span className="font-bold text-white">one agent per MLS market.</span>
+              </p>
+              <div className="mt-8 flex flex-wrap gap-4">
+                <TellMeMoreModal />
+                <a
+                  href={DEMO_URL}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="rounded-md border border-slate-500 px-6 py-3 font-semibold hover:bg-slate-700 transition-colors"
+                >
+                  See a live example →
+                </a>
+              </div>
+            </div>
+
+            {/* Right — what it does */}
+            <div className="rounded-2xl border border-slate-600 bg-slate-800/60 p-8">
+              <p className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-5">
+                What it does for you — every single day
+              </p>
+              <ul className="space-y-4">
+                {[
+                  { icon: "🔍", text: "Scores every listing in your MLS and picks the best deal" },
+                  { icon: "🌐", text: "Publishes a new SEO page to your branded website" },
+                  { icon: "📧", text: "Emails every subscriber at 8 AM with today's deal" },
+                  { icon: "📱", text: "Posts to Facebook, Instagram & LinkedIn at 9 AM" },
+                  { icon: "🔥", text: "Emails you instantly when someone is ready to make an offer" },
+                  { icon: "🎯", text: "Loads every signup into your CRM as a warm lead" },
+                ].map((item) => (
+                  <li key={item.icon} className="flex items-start gap-3">
+                    <span className="mt-0.5 text-xl leading-none">{item.icon}</span>
+                    <span className="text-slate-200">{item.text}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-6 border-t border-slate-600 pt-5">
+                <p className="text-sm text-slate-400 italic">
+                  Zero posts to write. Zero leads to chase. Runs while you sleep.
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+          {/* Exclusivity bar */}
+          <div className="mt-10 rounded-lg border border-brand-primary/40 bg-brand-primary/10 px-6 py-4 text-center">
+            <p className="font-semibold text-brand-primary">
+              ⚡ Exclusive access — one agent per MLS market. Once your market is claimed, it&apos;s closed.
+            </p>
           </div>
         </div>
       </section>
@@ -391,15 +434,20 @@ export default function HomePage() {
 
       {/* CTA */}
       <section className="bg-brand-dark py-16 text-center text-white">
-        <h2 className="text-3xl font-bold">Ready to launch?</h2>
-        <p className="mt-4 text-slate-300">Set up your Deal of the Day site in minutes.</p>
+        <p className="text-sm font-semibold uppercase tracking-widest text-brand-primary">
+          One agent per market
+        </p>
+        <h2 className="mt-3 text-3xl font-bold">Is your market still open?</h2>
+        <p className="mt-4 max-w-xl mx-auto text-slate-300">
+          If another agent in your MLS has already claimed it, the door is closed. Check now — setup takes less than 10 minutes.
+        </p>
         <div className="mt-8 flex flex-wrap justify-center gap-4">
           <TellMeMoreModal />
           <Link
             href="/agent/apply"
             className="inline-block rounded-md border border-slate-500 px-8 py-3 font-semibold hover:bg-slate-700 transition-colors"
           >
-            Start onboarding →
+            Claim my market →
           </Link>
         </div>
       </section>
