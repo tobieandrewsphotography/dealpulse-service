@@ -162,14 +162,14 @@ export default function ApplyForm() {
             <div>
               <div className="font-semibold">I have a lender sponsor</div>
               <div className="text-sm text-slate-600">
-                Co-branded plan at $1,250/mo instead of $1,500/mo. You&apos;ll coordinate billing split with your lender.
+                Co-branded plan at $750/mo instead of $1,000/mo. Your lender pays $250/mo for co-branding placement.
               </div>
             </div>
           </label>
           <div className="rounded-lg bg-slate-50 p-6">
             <div className="text-sm text-slate-600">Your plan</div>
             <div className="mt-1 text-3xl font-bold">
-              ${lender ? "1,250" : "1,500"}
+              ${lender ? "750" : "1,000"}
               <span className="text-base font-normal text-slate-500">/month</span>
             </div>
             <p className="mt-3 text-sm text-slate-600">

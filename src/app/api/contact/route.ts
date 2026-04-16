@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { supabaseAdmin } from "@/lib/supabase";
 
 export const dynamic = "force-dynamic";
 
@@ -43,8 +44,15 @@ export async function POST(request: NextRequest) {
         }),
       });
     } else {
-      // Log to console if no email key configured yet
       console.log("[contact] New inquiry:", { name, email, phone, brokerage, market, message });
+    }
+
+    // Save to Supabase inquiries table (best-effort — don't fail if DB not configured)
+    try {
+      const supabase = supabaseAdmin();
+      await supabase.from("inquiries").insert({ name, email, phone, brokerage, market, message });
+    } catch {
+      // Supabase not configured yet — that's ok
     }
 
     return NextResponse.json({ success: true });
