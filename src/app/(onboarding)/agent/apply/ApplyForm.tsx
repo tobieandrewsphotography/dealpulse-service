@@ -157,21 +157,94 @@ export default function ApplyForm() {
 
       {step === 3 && (
         <div className="space-y-6">
-          <label className="flex items-start gap-3 rounded-lg border border-slate-200 p-4 hover:bg-slate-50">
+          <label className="flex items-start gap-3 rounded-lg border border-slate-200 p-4 hover:bg-slate-50 cursor-pointer">
             <input type="checkbox" {...register("lenderSponsor")} className="mt-1 h-5 w-5" />
             <div>
-              <div className="font-semibold">I have a lender sponsor</div>
+              <div className="font-semibold">I have a co-marketing partner (lender, inspector, title, etc.)</div>
               <div className="text-sm text-slate-600">
-                Co-branded plan at $750/mo instead of $1,000/mo. Your lender pays $250/mo for co-branding placement.
+                Reduced plan at $750/mo instead of $1,000/mo. Your partner pays $250/mo for co-branding placement on your deal pages, emails, and social posts.
               </div>
             </div>
           </label>
+
+          {/* Partner info — shown when checkbox is checked */}
+          {lender && (
+            <div className="rounded-lg border border-sky-200 bg-sky-50 p-5 space-y-4">
+              <p className="text-sm font-semibold text-sky-900">
+                Partner details — we&apos;ll notify them when your site goes live.
+              </p>
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-sm font-medium text-slate-700 mb-1">Partner business name *</label>
+                  <input
+                    {...register("partnerBusinessName")}
+                    className="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-primary"
+                    placeholder="Equity Bank"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-slate-700 mb-1">Partner contact name *</label>
+                  <input
+                    {...register("partnerContactName")}
+                    className="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-primary"
+                    placeholder="Ernest Warren"
+                  />
+                </div>
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-sm font-medium text-slate-700 mb-1">Partner email *</label>
+                  <input
+                    {...register("partnerEmail")}
+                    type="email"
+                    className="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-primary"
+                    placeholder="ewarren@equitybank.com"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-slate-700 mb-1">Partner phone</label>
+                  <input
+                    {...register("partnerPhone")}
+                    type="tel"
+                    className="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-primary"
+                    placeholder="(316) 555-1234"
+                  />
+                </div>
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-sm font-medium text-slate-700 mb-1">Partner website</label>
+                  <input
+                    {...register("partnerWebsite")}
+                    type="url"
+                    className="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-primary"
+                    placeholder="https://equitybank.com/mortgage"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-slate-700 mb-1">Partner logo URL</label>
+                  <input
+                    {...register("partnerLogoUrl")}
+                    type="url"
+                    className="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-primary"
+                    placeholder="https://..."
+                  />
+                </div>
+              </div>
+            </div>
+          )}
+
           <div className="rounded-lg bg-slate-50 p-6">
             <div className="text-sm text-slate-600">Your plan</div>
             <div className="mt-1 text-3xl font-bold">
               ${lender ? "750" : "1,000"}
               <span className="text-base font-normal text-slate-500">/month</span>
             </div>
+            {lender && (
+              <p className="mt-1 text-sm text-sky-700 font-medium">
+                Your partner pays $250/mo — you pay $750/mo.
+              </p>
+            )}
             <p className="mt-3 text-sm text-slate-600">
               You&apos;ll be redirected to Stripe to complete payment. Your site goes live within 24-48 hours.
             </p>

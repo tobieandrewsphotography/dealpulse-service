@@ -35,6 +35,14 @@ create table if not exists onboarding_submissions (
   -- Plan
   lender_sponsor    boolean default false,
 
+  -- Co-marketing partner (optional — populated when lender_sponsor = true)
+  partner_business_name  text,
+  partner_contact_name   text,
+  partner_email          text,
+  partner_phone          text,
+  partner_website        text,
+  partner_logo_url       text,
+
   -- Status tracking
   status            text default 'pending_payment',
   stripe_session_id text,

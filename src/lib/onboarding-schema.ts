@@ -27,6 +27,12 @@ export const onboardingSchema = z.object({
 
   // Step 4
   lenderSponsor: z.boolean().default(false),
+  partnerBusinessName: z.string().optional().or(z.literal("")),
+  partnerContactName: z.string().optional().or(z.literal("")),
+  partnerEmail: z.string().email().optional().or(z.literal("")),
+  partnerPhone: z.string().optional().or(z.literal("")),
+  partnerWebsite: z.string().url().optional().or(z.literal("")),
+  partnerLogoUrl: z.string().url().optional().or(z.literal("")),
 });
 
 export type OnboardingInput = z.infer<typeof onboardingSchema>;
