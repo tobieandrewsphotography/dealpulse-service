@@ -42,9 +42,9 @@ export default function HomePage() {
 
       {/* The Value — Why This Is Such a Good Deal */}
       <section className="mx-auto max-w-6xl px-6 py-20">
-        <h2 className="text-center text-3xl font-bold">Four things every agent needs — handled.</h2>
+        <h2 className="text-center text-3xl font-bold">Five things every agent needs — handled.</h2>
         <p className="mx-auto mt-3 max-w-2xl text-center text-slate-600">
-          Stop paying for four separate tools. DealPulse gives you lead generation, social media, SEO, and CRM integration in one automated platform.
+          Stop paying for five separate tools. DealPulse gives you lead generation, social media, SEO, email marketing, and CRM integration in one automated platform.
         </p>
 
         <div className="mt-12 grid gap-6 md:grid-cols-2">
@@ -103,6 +103,21 @@ export default function HomePage() {
                 <h3 className="text-xl font-semibold">Hot Leads Emailed Directly To You</h3>
                 <p className="mt-2 text-slate-600">
                   When someone clicks &ldquo;I want to make an offer,&rdquo; you get an email instantly with their name, phone number, and the property they&apos;re interested in. That&apos;s a hot lead — ready to go.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Daily Email */}
+          <div className="rounded-xl border border-slate-200 bg-white p-8 shadow-sm transition hover:shadow-md md:col-span-2">
+            <div className="flex items-start gap-4">
+              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-green-100 text-2xl">
+                📧
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold">Morning Email to Every Subscriber — Every Day at 8 AM</h3>
+                <p className="mt-2 text-slate-600">
+                  Every person who signs up on your site receives the day&apos;s best deal in their inbox at 8 AM — automatically. Your brand, your deal, their inbox. It keeps your audience engaged daily, builds trust over time, and puts you in front of buyers before they open any other app. No newsletter to write. No scheduling. It goes out every morning without you touching a thing.
                 </p>
               </div>
             </div>
@@ -194,6 +209,7 @@ export default function HomePage() {
             <ul className="mt-8 space-y-3 text-slate-700">
               <li>✓ Your custom Deal of the Day site on your domain</li>
               <li>✓ Daily AI-powered deal scoring &amp; selection</li>
+              <li>✓ Daily 8 AM subscriber email — sent automatically every morning</li>
               <li>✓ Social media auto-posting (Facebook, Instagram, LinkedIn)</li>
               <li>✓ MLS Grid integration for your market</li>
               <li>✓ Investor tools &amp; Deal Optimizer</li>
