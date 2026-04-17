@@ -10,6 +10,7 @@ export function MarketingNav() {
         <div className="flex items-center gap-6 text-sm">
           <Link href="/how-it-works">How it works</Link>
           <Link href="/pricing">Pricing</Link>
+          <Link href="/partners">Partners</Link>
           <Link href="/demo">Demo</Link>
           <a
             href={process.env.NEXT_PUBLIC_AGENT_URL || "https://dealpulseagent.com"}
