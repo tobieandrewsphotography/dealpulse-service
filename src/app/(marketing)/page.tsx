@@ -68,6 +68,7 @@ export default function HomePage() {
                 {[
                   { icon: "🔍", text: "Scores every listing in your MLS and picks the best deal" },
                   { icon: "🌐", text: "Publishes a new SEO page to your branded website" },
+                  { icon: "🤖", text: "Optimizes for AEO (Answer Engine Optimization — your deals surface when buyers ask ChatGPT, Perplexity, or Google AI about homes in your market)" },
                   { icon: "📧", text: "Emails every subscriber at 8 AM with today's deal" },
                   { icon: "📱", text: "Posts to Facebook, Instagram & LinkedIn at 9 AM" },
                   { icon: "🔥", text: "Emails you instantly when someone is ready to make an offer" },
